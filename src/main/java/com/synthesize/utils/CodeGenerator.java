@@ -1,9 +1,9 @@
 package com.synthesize.utils;
 
 
+import cn.hutool.core.lang.Validator;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -44,7 +44,7 @@ public class CodeGenerator {
         System.out.println(help.toString());
         if (scanner.hasNext()) {
             String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)) {
+            if (Validator.isNotEmpty(ipt)) {
                 return ipt;
             }
         }
@@ -68,7 +68,7 @@ public class CodeGenerator {
                 // XML ColumnList: mapper.xml生成查询结果列
                 .setBaseColumnList(true)
                 // swagger注解; 须添加swagger依赖
-                .setSwagger2(true)
+                .setSwagger2(false)
                 // 作者
                 .setAuthor("dadayu")
                 //设置实体类名称

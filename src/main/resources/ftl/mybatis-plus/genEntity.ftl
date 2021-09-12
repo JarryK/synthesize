@@ -51,7 +51,7 @@ public class ${entity} {
         </#if>
         <#if field.keyFlag>
         <#-- 主键 -->
-        @TableId(value = "${field.name}", type = IdType.UUID)
+        @TableId(value = "${field.name}", type = IdType.ASSIGN_UUID)
         <#-- 普通字段 -->
         <#else>
         <#if field.name == "create_dt">
