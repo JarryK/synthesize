@@ -1,0 +1,45 @@
+server:
+  port: 8890
+  servlet:
+    context-path: /syn
+#  resources:
+#    static-locations: classpath:/static/
+
+
+# database
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/synthesize?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&nullCatalogMeansCurrent=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.synthesize.*.entity
+  global-config:
+    # 是否打开控制台mybatis-plus的logo
+    banner: true
+    # 是否打开 SqlRunner-数据库语句操作工具
+    enable-sql-runner: true
+    # 3.0后废弃，使用@bean注入
+    #sqlInjector
+    # 通用mapper父类
+    #superMapperClass:
+    #公共字段全局填充,如时间等 3.0后废弃，使用@bean注入
+    #metaObjectHandler:
+
+
+
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'

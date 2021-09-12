@@ -1,0 +1,17 @@
+server:
+  port: 8999
+  servlet:
+    context-path: /syn
+#  resources:
+#    static-locations: classpath:/static/
+
+
+# database
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/synthesize?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&nullCatalogMeansCurrent=false
+    username: syn
+    password: syn_123456
+    driver-class-name: com.mysql.jdbc.Driver
