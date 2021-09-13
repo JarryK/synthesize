@@ -124,7 +124,7 @@ public class TestController {
         try{
             TestEntity entity = info.getQuery();
             Integer num = info.getNum();
-            Integer size = info.getSize();
+            Integer size = info.getSize() == 0 ? 10:info.getSize();
             Page<TestEntity> entityPage = new Page<>(num,size);//参数一是当前页，参数二是每页个数
             entityPage.setSearchCount(true);
             QueryWrapper<TestEntity> wrapper = Wrappers.query();

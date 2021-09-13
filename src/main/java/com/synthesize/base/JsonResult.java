@@ -17,7 +17,6 @@ public class JsonResult {
 
     private int code;         //状态码
     private String msg;       //消息
-    private int  count;       //记录条数
     private Object data;      //数据对象
 
     /**
@@ -48,21 +47,6 @@ public class JsonResult {
         super();
         this.code=code;
         this.msg=msg;
-        this.data=data;
-    }
-
-    /**
-     * 返回全部信息即:状态码，消息，记录条数，数据对象
-     * @param code
-     * @param msg
-     * @param count
-     * @param data
-     */
-    public JsonResult(int code, String msg, int count, Object data){
-        super();
-        this.code=code;
-        this.msg=msg;
-        this.count=count;
         this.data=data;
     }
 

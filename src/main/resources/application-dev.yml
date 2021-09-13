@@ -12,8 +12,8 @@ spring:
     static-locations: classpath:/static/
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/synthesize?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&nullCatalogMeansCurrent=false
-    username: root
-    password: root
+    username: syn
+    password: syn_123456
     driver-class-name: com.mysql.jdbc.Driver
 
 
@@ -43,3 +43,5 @@ mybatis-plus:
     cache-enabled: false
     #配置JdbcTypeForNull, oracle数据库必须配置
     jdbc-type-for-null: 'null'
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
